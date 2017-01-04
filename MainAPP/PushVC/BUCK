@@ -1,0 +1,8 @@
+apple_library(
+  name = 'PushViewController',
+  srcs = glob(['*.m']),
+  headers = glob(['*.h']),
+  visibility = [
+    'PUBLIC',
+  ],
+)
