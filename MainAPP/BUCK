@@ -1,21 +1,21 @@
 apple_resource(
-  name = 'buckdemo_resource',
+  name = 'mainapp_resource',
   files = glob(['*.png']),
   dirs = [],
 )
 
 apple_bundle(
-  name = 'buckdemo_bundle',
-  binary = ':buckdemo_binary',
+  name = 'mainapp_bundle',
+  binary = ':mainapp_binary',
   extension = 'app',
   info_plist = 'Info.plist',
 )
 
 apple_binary(
-    name = 'buckdemo_binary',
+    name = 'mainapp_binary',
     deps = [
-        ':buckdemo_resource',
-         '//BuckDemo/PushVC:PushViewController'
+        ':mainapp_resource',
+         '//MainApp/PushVC:PushViewController'
     ],
     preprocessor_flags = ['-fobjc-arc'],
     headers = glob([
@@ -30,6 +30,6 @@ apple_binary(
     ],
 )
 apple_package(
-  name = 'buckdemo_package',
-  bundle = ':buckdemo_bundle',
+  name = 'mainapp_package',
+  bundle = ':mainapp_bundle',
 )

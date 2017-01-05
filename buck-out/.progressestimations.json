@@ -1,0 +1,1 @@
+{"build MainAPP/PushVC:PushVClib --config client.id=nuclide --keep-going":{"expectedNumberOfParsedRules":5,"expectedNumberOfParsedBUCKFiles":1}}

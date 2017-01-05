@@ -1,0 +1,4 @@
+InvocationInfo {"buildId":"31ebe755-3954-4863-baf7-77e263446da5","superConsoleEnabled":false,"isDaemon":true,"subCommand":"buildcommand","timestampMillis":1483535688852}
+ParseStarted {"timestamp":1483535691586}
+ParseFinished {"timestamp":1483535691615}
+BuildRuleEvent.Finished ExitCode {"exitCode":0}

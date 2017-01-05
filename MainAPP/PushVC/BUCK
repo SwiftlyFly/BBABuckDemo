@@ -2,6 +2,30 @@ apple_library(
   name = 'PushViewController',
   srcs = glob(['*.m']),
   headers = glob(['*.h']),
+  exported_linker_flags = [
+    '-lc++',
+  ],
+  visibility = [
+    'PUBLIC',
+  ],
+)
+# platform = read_config('cxx', 'platform')
+# genrule(
+#   name = 'gen_prebuilt_cxx_library',
+#   out = 'gen_prebuilt_cxx_library',
+#   bash = ' && '.join([
+#     'mkdir -p $OUT',
+#     'cp $(location :cxx_library#shared,{}) $OUT/'.format(platform),
+#     'cp $(location :cxx_library#static,{}) $OUT/'.format(platform),
+#     '(cd $OUT; for f in *; do mv "${f}" "${f/libcxx_library/libprebuilt_cxx_library}"; done)',
+#   ]),
+# )
+
+prebuilt_cxx_library(
+  name = 'PushVClib',
+  # supports_shared_library_interface = True,
+  lib_dir = 'MainApp/$(platform)',
+  exported_headers = glob(['*.h']),
   visibility = [
     'PUBLIC',
   ],
